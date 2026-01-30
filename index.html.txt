@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Óptica Móvil</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            font-family: sans-serif;
+            overflow: hidden; /* Evita el scroll para mejorar la exp. táctil */
+            touch-action: none; /* Desactiva gestos del navegador */
+        }
+        
+        /* Panel de Datos Flotante */
+        #data-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 12px;
+            pointer-events: none; /* Permite tocar a través del panel */
+            z-index: 10;
+            max-width: 150px;
+        }
+
+        /* Contenedor del Slider (abajo) */
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            pointer-events: auto;
+        }
+
+        .label-foco {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="data-panel">
+        <strong>Datos:</strong><br>
+        <span id="txt-f">f: --</span><br>
+        <span id="txt-do">do: --</span><br>
+        <span id="txt-di">di: --</span><br>
+        <span style="color:#2980b9">Arrastra la flecha azul</span>
+    </div>
+
+    <div id="controls">
+        <div class="label-foco" id="focal-label">Foco: 100mm</div>
+        </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
